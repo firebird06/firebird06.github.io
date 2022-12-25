@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+	<style type="text/css">
+		
+		div{
+			background-color: #FFFFFF;
+			background-repeat: no-repeat;
+			width: 200px;
+			height: 200px;
+			margin: .2em;
+		}
+
+		p {
+			color: #000000;
+  			text-align: center;
+  			font-family: "Optima", sans-serif;
+  			font-size: 1.25em;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<center><div>
+		<br><br><br>
+  		<p>How To Become Legally Blind</p>
+  	</div></center>
+
+	<audio id="song" src="city.mp3"></audio>
+
+	<script type="text/javascript">
+
+			var press = 0;
+		document.addEventListener("keydown", 
+			function(){
+				press = press + 1
+			console.log(press)
+
+			if (press%2 == 0) {document.body.style.backgroundColor = "red";
+			song.play()
+		}
+
+			if (press%2 == 1) {document.body.style.backgroundColor = "blue";
+			song.pause()
+		}
+		})
+
+	</script>
+
+</body>
+</html>

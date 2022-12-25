@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+	<style type="text/css">
+		
+		#ghost{
+			width: 100px;
+			height: 100px;
+			background-image:url(https://m.media-amazon.com/images/I/81G2BRR+2iL._SS500_.jpg);
+			background-size: cover;
+			background-position: center;
+			position: absolute;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div id="ghost"></div>
+
+	<script type="text/javascript">
+
+		document.addEventListener("mousemove", 
+			function(event){
+				ghost.style.left = event.clientX + "px"
+				ghost.style.top = event.clientY + "px"
+		})
+
+	</script>
+
+</body>
+</html>
