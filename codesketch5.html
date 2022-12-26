@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+	<style type="text/css">
+		
+		#box {
+			width: 500px;
+			height: 500px;
+			border: 1 px solid black;
+			font-size: 125px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<center>
+		<p>This is the list of leftovers in the fridge that you can eat for dinner ... </p>
+		<div id="box"></div>
+	</center>
+
+	<script type="text/javascript">
+
+		var dinnerFoods = ["hamburgers", "spaghetti and meatballs", "tacos", "pork chops", "chili and rice", "pizza"]
+
+		box.addEventListener("click", function(){
+			var randomNumber = Math.round(Math.random()*5);
+			box.style.backgroundImage = "url(" + dinnerFoods[randomNumber] + ")"
+			box.innerText = dinnerFoods[randomNumber];
+			console.log(randomNumber)
+		})
+
+</script>
+</body>
+</html>
