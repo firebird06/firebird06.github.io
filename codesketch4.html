@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title></title>
+    
+    <style>
+        
+        h1 {
+            font-family:;
+            font-size:;
+            color:;
+        }
+
+        p {
+            font-family: "Optima", sans-serif;
+            font-size:;
+            text-align: center;
+            color: #085e57;
+        }
+
+        body {
+            background-color: #fff9e5;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1> <!-- --> <h1>
+
+<br><br>
+
+    <p>Click to see my favorite flower. Hover to see my second favorite flower. Then, repeat!<p>
+
+    <script type="text/javascript">
+
+    function makeSquare (){
+         var square = document.createElement('div');
+                        document.body.appendChild(square);
+            square.style.width = "250px";
+            square.style.height = "250px";
+            square.style.display = "inline-block";
+            square.style.margin = "10px";
+            square.style.backgroundRepeat = "no-repeat";
+            square.style.border = "1px";
+            square.style.backgroundColor = "green";
+            square.style.backgroundImage = "url(lilies.jpg)";
+            square.addEventListener("mouseenter", function(){
+                square.style.backgroundImage = "url(orchids.jpg)";})
+                square.style.backgroundSize = "contain";}
+
+    document.addEventListener("click", makeSquare)
+
+</script>
+</body>
