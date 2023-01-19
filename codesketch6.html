@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+		<style type="text/css">
+			
+			img {
+				width: 750px;
+				height: 675px;
+				background-size: contain;
+				position: center;
+			}
+
+		</style>
+
+</head>
+<body>
+
+	<div id="box"></div>
+
+	<center>
+		<img id="whatever" src= "disney.jpg"></img>
+	</center>
+
+	<script type="text/javascript">
+
+		document.addEventListener("mousemove", function(event){
+			whatever.style.filter = "hue-rotate("+ event.clientX + "deg)";
+			console.log(event.clientX, event.clientY)
+			})
+
+</script>
+</body>
+</html>
