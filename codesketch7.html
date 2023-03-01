@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+	<style type="text/css">
+		
+		p {
+			color: white;
+  			text-align: center;
+  			font-family: "Optima", sans-serif;
+  			font-size: 1.25em;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<center>
+		<br><br><br>
+  		<p>Dear Casey, Happy Valentine's Day! Press To Listen Our Song Whenever You Miss Me A Little Too Much.</p>
+  	</center>
+
+	<audio id="song" src="valentine.mp3"></audio>
+
+	<script type="text/javascript">
+
+			var press = 0;
+		document.addEventListener("keydown", 
+			function(){
+				press = press + 1
+			console.log(press)
+
+			if (press%2 == 0) {document.body.style.backgroundColor = "red";
+			song.play()
+		}
+
+			if (press%2 == 1) {document.body.style.backgroundColor = "pink";
+			song.pause()
+		}
+		})
+
+</script>
+</body>
+</html>
