@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+	<style type="text/css">
+		
+		body {
+  			background-color: #fff9e5;
+  			text-align: center;
+		}
+
+		h1 {
+  			color: #0d9c90;
+  			background-color: white;
+  			text-align: center;
+  			font-family: "URW Chancery L", cursive;
+  			font-size: 4em;
+  			margin: 0px;
+  			padding: 0px;
+		}
+
+		h2 {
+  			color: #085e57;
+  			text-align: left;
+  			font-family: "Optima", sans-serif;
+  			font-size: 1.5em;
+		}
+
+		img {
+  			border-radius: 20%;
+  			border: 3px solid #1E555C;
+  			max-width: 75%;
+  			max-height: 75%;
+  			margin-top: 0em;
+		}
+
+		.question {
+  			display: flex;
+  			margin-top: 2em;
+		}
+
+		.answer-choice {
+  			margin: 10px;
+		}
+
+		.answer-choice img {
+  			height: 10em;
+		}
+
+		button { 
+  			margin-top: 10px;
+  			font-family: "Oswald", sans-serif;
+  			font-size: 15px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<header>
+		<h1>Are You An Early Bird Or A Night Owl?</h1>
+		<p>Take this quiz to find out if you are an early bird or a night owl based on your daily routine preferences.</p>
+	</header>
+
+	<main>
+		<h2>Choose something to drink.</h2>
+		<div class="question">
+
+			<div class="answer-choice">
+				<img src="eggnog.jpg">
+        <br>
+        <button id="q1a1">Eggnog</button>
+      </div>
+
+      		<div class="answer-choice">
+        		<img src="icedlatte.jpg">
+        <br>
+        <button id="q1a2">Iced Latte</button>
+      </div>
+
+    	</div> 
+    
+    	<h2>Pick something to eat.</h2>
+    	<div class="question">
+
+      		<div class="answer-choice">
+        		<img src="spaghetti.jpg">
+        <br>
+        <button id="q2a1">Spaghetti</button>
+      </div>
+
+      		<div class="answer-choice">
+        		<img src="salad.jpg">
+        <br>
+        <button id="q2a2">Salad</button>
+      </div>
+
+    	</div> 
+    
+    	<h2>Select something to do.</h2>
+    	<div class="question">
+
+      		<div class="answer-choice">
+        		<img src="watching-television.jpg">
+        <br>
+        <button id="q3a1">Watching television</button>
+      </div>
+
+      		<div class="answer-choice">
+        		<img src="swimming-in-the-ocean.jpg">
+        <br>
+        <button id="q3a2">Going swimming in the ocean</button>
+      </div>
+
+    	</div> 
+    
+    <h2 id="result">Your result is ...</h2>
+    
+  </main>
+
+	<script type="text/javascript">
+
+			var birdScore = 0;
+			var owlScore = 0;
+
+			var questionCount = 0;
+
+			var result = document.getElementById("result");
+
+			var q1a1 = document.getElementById("q1a1");
+			var q1a2 = document.getElementById("q1a2");
+
+			var q2a1 = document.getElementById("q2a1");
+			var q2a2 = document.getElementById("q2a2");
+
+			var q3a1 = document.getElementById("q3a1");
+			var q3a2 = document.getElementById("q3a2");
+
+			q1a1.addEventListener("click", bird);
+			q1a2.addEventListener("click", owl);
+
+			q2a1.addEventListener("click", owl);
+			q2a2.addEventListener("click", bird);
+
+			q3a1.addEventListener("click", bird);
+			q3a2.addEventListener("click", owl);
+
+			function bird(){
+  				birdScore += 1; 
+  				questionCount += 1;
+  			console.log("questionCount = " + questionCount + " birdScore = " + birdScore);
+
+  			if (questionCount == 3) {
+    		console.log("The quiz is done!")
+    		updateResult();
+  			}
+  			}
+
+  			function owl(){
+  				owlScore += 1;
+  				questionCount += 1;
+			console.log("questionCount = " + questionCount + " owlScore = " + owlScore);
+
+  			if (questionCount == 3) {
+    		console.log("The quiz is done!")
+    		updateResult();
+  			}
+			}
+
+			function updateResult() {
+  				if (birdScore >= 2) {
+    				result.innerHTML = "You are an Early Bird!";
+    		console.log("You are an Early Bird!")
+  				} else if (owlScore >= 2) {
+    				result.innerHTML = "You are a Night Owl!";
+    		console.log("You are a Night Owl!")
+  			}
+			}
+
+</script>
+</body>
+</html>

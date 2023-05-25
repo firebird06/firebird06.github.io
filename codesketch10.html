@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+	<style type="text/css">
+		
+		body {
+  			background-color: #fff9e5;
+  			text-align: center;
+		}
+
+		h1 {
+  			color: #0d9c90;
+  			background-color: white;
+  			text-align: center;
+  			font-family: "URW Chancery L", cursive;
+  			font-size: 4em;
+  			margin: 0px;
+  			padding: 0px;
+		}
+
+		h2 {
+  			color: #085e57;
+  			text-align: left;
+  			font-family: "Optima", sans-serif;
+  			font-size: 1.5em;
+		}
+
+		img {
+  			border-radius: 20%;
+  			border: 3px solid #1E555C;
+  			max-width: 75%;
+  			max-height: 75%;
+  			margin-top: 0em;
+		}
+
+		.question {
+  			display: flex;
+  			margin-top: 2em;
+		}
+
+		.answer-choice {
+  			margin: 10px;
+		}
+
+		.answer-choice img {
+  			height: 10em;
+		}
+
+		button { 
+  			margin-top: 10px;
+  			font-family: "Oswald", sans-serif;
+  			font-size: 15px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<header>
+		<h1>Are You A Type A Person Or A Type B Person?</h1>
+		<p>Take this quiz to find out if you are a type A person or a type B person based on your daily activity preferences.</p>
+	</header>
+
+	<main>
+		<h2>Choose something to do in the morning.</h2>
+		<div class="question">
+
+			<div class="answer-choice">
+				<img src="running-a-marathon.jpg">
+        <br>
+        <button id="q1a1">Running A Marathon</button>
+      </div>
+
+      		<div class="answer-choice">
+        		<img src="sleeping-in.jpg">
+        <br>
+        <button id="q1a2">Sleeping In</button>
+      </div>
+
+    	</div> 
+    
+    	<h2>Pick something to do in the afternoon.</h2>
+    	<div class="question">
+
+      		<div class="answer-choice">
+        		<img src="painting.jpg">
+        <br>
+        <button id="q2a1">Painting</button>
+      </div>
+
+      		<div class="answer-choice">
+        		<img src="working.jpg">
+        <br>
+        <button id="q2a2">Working</button>
+      </div>
+
+    	</div> 
+    
+    	<h2>Select something to do at night.</h2>
+    	<div class="question">
+
+      		<div class="answer-choice">
+        		<img src="stock-market-trading.jpg">
+        <br>
+        <button id="q3a1">Stock Market Trading</button>
+      </div>
+
+      		<div class="answer-choice">
+        		<img src="playing-video-games.jpg">
+        <br>
+        <button id="q3a2">Playing Video Games</button>
+      </div>
+
+    	</div> 
+    
+    <h2 id="result">Your result is ...</h2>
+    
+  </main>
+
+	<script type="text/javascript">
+
+			var typeAScore = 0;
+			var typeBScore = 0;
+
+			var questionCount = 0;
+
+			var result = document.getElementById("result");
+
+			var q1a1 = document.getElementById("q1a1");
+			var q1a2 = document.getElementById("q1a2");
+
+			var q2a1 = document.getElementById("q2a1");
+			var q2a2 = document.getElementById("q2a2");
+
+			var q3a1 = document.getElementById("q3a1");
+			var q3a2 = document.getElementById("q3a2");
+
+			q1a1.addEventListener("click", typeA);
+			q1a2.addEventListener("click", typeB);
+
+			q2a1.addEventListener("click", typeB);
+			q2a2.addEventListener("click", typeA);
+
+			q3a1.addEventListener("click", typeA);
+			q3a2.addEventListener("click", typeB);
+
+			function typeA(){
+  				typeAScore += 1; 
+  				questionCount += 1;
+  			console.log("questionCount = " + questionCount + " typeAScore = " + typeAScore);
+
+  			if (questionCount == 3) {
+    		console.log("The quiz is done!")
+    		updateResult();
+  			}
+  			}
+
+  			function typeB(){
+  				typeBScore += 1;
+  				questionCount += 1;
+			console.log("questionCount = " + questionCount + " typeBScore = " + typeBScore);
+
+  			if (questionCount == 3) {
+    		console.log("The quiz is done!")
+    		updateResult();
+  			}
+			}
+
+			function updateResult() {
+  				if (typeAScore >= 2) {
+    				result.innerHTML = "You are a Type A Person!";
+    		console.log("You are a Type A Person!")
+  				} else if (typeBScore >= 2) {
+    				result.innerHTML = "You are a Type B Person!";
+    		console.log("You are a Type B Person!")
+  			}
+			}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+	<style type="text/css">
+		
+		body {
+  			background-color: #fff9e5;
+  			text-align: center;
+		}
+
+		h1 {
+  			color: #0d9c90;
+  			background-color: white;
+  			text-align: center;
+  			font-family: "URW Chancery L", cursive;
+  			font-size: 4em;
+  			margin: 0px;
+  			padding: 0px;
+		}
+
+		h2 {
+  			color: #085e57;
+  			text-align: left;
+  			font-family: "Optima", sans-serif;
+  			font-size: 1.5em;
+		}
+
+		img {
+  			border-radius: 20%;
+  			border: 3px solid #1E555C;
+  			max-width: 75%;
+  			max-height: 75%;
+  			margin-top: 0em;
+		}
+
+		.question {
+  			display: flex;
+  			margin-top: 2em;
+		}
+
+		.answer-choice {
+  			margin: 10px;
+		}
+
+		.answer-choice img {
+  			height: 10em;
+		}
+
+		button { 
+  			margin-top: 10px;
+  			font-family: "Oswald", sans-serif;
+  			font-size: 15px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<header>
+		<h1>Are You A Jock Or A Nerd?</h1>
+		<p>Take this quiz to find out if you are a jock or a nerd based on your daily meal preferences.</p>
+	</header>
+
+	<main>
+		<h2>Choose something for breakfast.</h2>
+		<div class="question">
+
+			<div class="answer-choice">
+				<img src="breakfastsandwich.jpg">
+        <br>
+        <button id="q1a1">Breakfast Sandwich</button>
+      </div>
+
+      		<div class="answer-choice">
+        		<img src="acaibowl.jpg">
+        <br>
+        <button id="q1a2">Acai Bowl</button>
+      </div>
+
+    	</div> 
+    
+    	<h2>Pick something for lunch.</h2>
+    	<div class="question">
+
+      		<div class="answer-choice">
+        		<img src="pasta.jpg">
+        <br>
+        <button id="q2a1">Pasta</button>
+      </div>
+
+      		<div class="answer-choice">
+        		<img src="cheeseburger.jpg">
+        <br>
+        <button id="q2a2">Cheeseburger</button>
+      </div>
+
+    	</div> 
+    
+    	<h2>Select something for dinner.</h2>
+    	<div class="question">
+
+      		<div class="answer-choice">
+        		<img src="steakandpotatoes.jpg">
+        <br>
+        <button id="q3a1">Steak & Potatoes</button>
+      </div>
+
+      		<div class="answer-choice">
+        		<img src="salmonandrice.jpg">
+        <br>
+        <button id="q3a2">Salmon & Rice</button>
+      </div>
+
+    	</div> 
+    
+    <h2 id="result">Your result is ...</h2>
+    
+  </main>
+
+	<script type="text/javascript">
+
+			var jockScore = 0;
+			var nerdScore = 0;
+
+			var questionCount = 0;
+
+			var result = document.getElementById("result");
+
+			var q1a1 = document.getElementById("q1a1");
+			var q1a2 = document.getElementById("q1a2");
+
+			var q2a1 = document.getElementById("q2a1");
+			var q2a2 = document.getElementById("q2a2");
+
+			var q3a1 = document.getElementById("q3a1");
+			var q3a2 = document.getElementById("q3a2");
+
+			q1a1.addEventListener("click", jock);
+			q1a2.addEventListener("click", nerd);
+
+			q2a1.addEventListener("click", nerd);
+			q2a2.addEventListener("click", jock);
+
+			q3a1.addEventListener("click", jock);
+			q3a2.addEventListener("click", nerd);
+
+			function jock(){
+  				jockScore += 1; 
+  				questionCount += 1;
+  			console.log("questionCount = " + questionCount + " jockScore = " + jockScore);
+
+  			if (questionCount == 3) {
+    		console.log("The quiz is done!")
+    		updateResult();
+  			}
+  			}
+
+  			function nerd(){
+  				nerdScore += 1;
+  				questionCount += 1;
+			console.log("questionCount = " + questionCount + " nerdScore = " + nerdScore);
+
+  			if (questionCount == 3) {
+    		console.log("The quiz is done!")
+    		updateResult();
+  			}
+			}
+
+			function updateResult() {
+  				if (jockScore >= 2) {
+    				result.innerHTML = "You are a Jock!";
+    		console.log("You are a Jock!")
+  				} else if (nerdScore >= 2) {
+    				result.innerHTML = "You are a Nerd!";
+    		console.log("You are a Nerd!")
+  			}
+			}
+
+</script>
+</body>
+</html>
